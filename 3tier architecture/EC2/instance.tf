@@ -32,16 +32,3 @@ resource "aws_instance" "was" {
     Name = "Was Server"
   }
 }
-
-resource "aws_instance" "db" {
-  ami           = "ami-04cebc8d6c4f297a3"
-  instance_type = "t2.micro"
-
-  subnet_id = aws_subnet.db1.id
-  key_name = "TEST"
-
-  vpc_security_group_ids = [aws_security_group.db.id]
-  tags = {
-    Name = "DB Server"
-  }
-}

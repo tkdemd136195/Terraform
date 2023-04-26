@@ -1,6 +1,6 @@
 #target group 생성 및 인스턴스 추가
 resource "aws_alb_target_group" "web-target" {
-  Name = "web-target"
+  name = "web-target"
   port             = 80
   protocol         = "HTTP"
   vpc_id           = aws_vpc.terraform-vpc.id
@@ -19,7 +19,7 @@ resource "aws_alb_target_group_attachment" "web-target-attachment" {
 
 
 resource "aws_alb_target_group" "was-target" {
-  Name = "was-target"
+  name = "was-target"
   port             = 8080
   protocol         = "HTTP"
   vpc_id           = aws_vpc.terraform-vpc.id

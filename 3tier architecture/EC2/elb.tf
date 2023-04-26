@@ -33,7 +33,7 @@ resource "aws_alb_target_group" "was-target" {
 resource "aws_alb_target_group_attachment" "was-target-attachment" {
   target_group_arn = aws_alb_target_group.was-target.arn
   target_id        = aws_instance.was.id
-  port             = 80
+  port             = 8080
 }
 
 #로드밸런서 생성
